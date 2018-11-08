@@ -1,20 +1,19 @@
 //
-//  KnightStarRating.m
-//  Knight_Assistant
+//  JKStarRating.m
+//  JK_Assistant
 //
-//  Created by shanyou on 2017/9/28.
-//  Copyright © 2017年 闪游网络. All rights reserved.
+//  Created by  on 2017/9/28.
+//  Copyright © 2017年 . All rights reserved.
 //
 
-#import "KnightStarRating.h"
+#import "JKStarRating.h"
 
-@interface KnightStarRating ()
+@interface JKStarRating ()
 @property (nonatomic) CGColorRef backCGColor;
 @end
 
 CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
-
-@implementation KnightStarRating
+@implementation JKStarRating
 
 #pragma mark Init & dealloc
 - (void)setDefaultProperties
@@ -22,7 +21,7 @@ CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
     self.maxRating = 5.0;
     self.rating = 0.0;
     self.horizontalMargin = 0;
-    self.displayMode = KnightStarRatingDisplayFull;
+    self.displayMode = JKStarRatingDisplayFull;
     self.halfStarThreshold = ED_DEFAULT_HALFSTAR_THRESHOLD;
     self.backgroundColor = [UIColor clearColor];
 }
@@ -66,10 +65,10 @@ CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
                 CGRect rectClip;
                 rectClip.origin = starPoint;
                 rectClip.size = starSize;
-                if (self.displayMode == KnightStarRatingDisplayHalf && difference < self.halfStarThreshold ) {    // Draw half star image
+                if (self.displayMode == JKStarRatingDisplayHalf && difference < self.halfStarThreshold ) {    // Draw half star image
                     rectClip.size.width /= 2.0;
                 }
-                else if  (self.displayMode == KnightStarRatingDisplayAccurate) {
+                else if  (self.displayMode == JKStarRatingDisplayAccurate) {
                     rectClip.size.width *= difference;
                 }
                 else {
@@ -109,12 +108,12 @@ CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
     [super setBackgroundColor:backgroundColor];
     self.backCGColor = backgroundColor.CGColor;
 }
-- (void)setReturnBlock:(KnightStarRatingReturnBlock)returnBlock
+- (void)setReturnBlock:(JKStarRatingReturnBlock)returnBlock
 {
     _returnBlock = [returnBlock copy];
     _delegate = nil;
 }
-- (void)setDelegate:(id<KnightStarRatingDelegate>)delegate
+- (void)setDelegate:(id<JKStarRatingDelegate>)delegate
 {
     _delegate = delegate;
     _returnBlock = nil;
@@ -124,7 +123,7 @@ CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
     _rating = rating;
     [self setNeedsDisplay];
 }
-- (void)setDisplayMode:(KnightStarRatingDisplayMode)displayMode
+- (void)setDisplayMode:(JKStarRatingDisplayMode)displayMode
 {
     _displayMode = displayMode;
     [self setNeedsDisplay];
@@ -175,7 +174,7 @@ CGFloat ED_DEFAULT_HALFSTAR_THRESHOLD = 0.6;
         if (point.x > p.x) {
             float increment = 1.0;
             
-            if (self.displayMode == KnightStarRatingDisplayHalf) {
+            if (self.displayMode == JKStarRatingDisplayHalf) {
                 float difference = (point.x - p.x) / self.normalImage.size.width;
                 
                 if (difference < self.halfStarThreshold) {
