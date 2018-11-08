@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'JKStarRating'
-s.version = '0.0.1'
+s.version = '0.0.2'
 s.summary = 'An easy way to use frame'
 s.homepage = 'https://github.com/JokerKin/JKStarRating'
 s.license = 'MIT'
