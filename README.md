@@ -10,5 +10,5 @@
     _starRating.horizontalMargin = 0;
     _starRating.editable = NO;
     _starRating.rating = 2.5;
-    _starRating.displayMode = KnightStarRatingDisplayHalf;
+    _starRating.displayMode = JKStarRatingDisplayHalf;
 ```
